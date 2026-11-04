@@ -1,1 +1,785 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c5a43">
+  <meta name="description" content="Galeri Foto Kegiatan DKM Al Mujtahid SMAN 22 Bandung. Dokumentasi lengkap kegiatan ibadah, sosial, dan pencerahan rohani.">
+  <title>Galeri Kegiatan | DKM Al Mujtahid SMAN 22 Bandung</title>
+  
+  <style>
+    /* ==========================================================================
+       1. VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --green-950: #073b2d;
+      --green-900: #084936;
+      --green-800: #0c5a43;
+      --green-700: #167052;
+      --green-100: #e7f3ed;
+      --gold: #d9b765;
+      --gold-light: #f5e8bd;
+      --ink: #18342b;
+      --muted: #64776f;
+      --paper: #fbfcf8;
+      --white: #ffffff;
+      --line: #e2ebe5;
+      --shadow: 0 18px 45px rgba(7, 59, 45, .10);
+      --shadow-hover: 0 22px 50px rgba(7, 59, 45, .18);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    /* ==========================================================================
+       2. TOPBAR & HEADER NAV
+       ========================================================================== */
+    .topbar {
+      background: var(--green-950);
+      color: #eaf4ee;
+      font-size: .82rem;
+      padding: 8px 0;
+    }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .topbar strong { color: var(--gold-light); font-weight: 600; }
+    .topbar-link { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+    .topbar-link:hover { color: #fff; }
+
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid rgba(226,235,229,.9);
+      backdrop-filter: blur(12px);
+    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark {
+      width: 52px; height: 52px; border-radius: 50%; flex: 0 0 52px;
+      display: block; object-fit: contain; background: #fff;
+      border: 1px solid #e3ebe5; box-shadow: 0 5px 14px rgba(12,90,67,.12);
+    }
+    .brand-name { font-weight: 800; letter-spacing: -.03em; line-height: 1.15; font-size: 1.02rem; }
+    .brand-sub { display: block; margin-top: 5px; color: var(--muted); font-size: .76rem; font-weight: 500; letter-spacing: 0; }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: .9rem; font-weight: 650; color: #3d5b4e; }
+    .nav-links a:not(.btn) { transition: color .2s ease; }
+    .nav-links a:not(.btn):hover { color: var(--green-700); }
+    .nav-links a.active { color: var(--green-800); font-weight: 800; position: relative; }
+    .nav-links a.active::after {
+      content: ""; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px;
+      background: var(--gold); border-radius: 2px;
+    }
+
+    /* Buttons Style */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 12px; padding: 10px 18px; font-weight: 750; font-size: .88rem;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+      cursor: pointer; border: none;
+    }
+    .btn-primary { color: white; background: var(--green-800); box-shadow: 0 8px 20px rgba(12,90,67,.16); }
+    .btn-primary:hover { background: var(--green-950); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(7,59,45,.22); }
+    .btn-gold { color: var(--green-950); background: var(--gold-light); box-shadow: 0 8px 20px rgba(217,183,101,.25); }
+    .btn-gold:hover { background: #fff1c8; transform: translateY(-2px); color: var(--green-950); }
+    .btn-outline { color: var(--green-900); border: 1px solid #b9d0c4; background: rgba(255,255,255,.9); }
+    .btn-outline:hover { background: white; border-color: var(--green-700); transform: translateY(-2px); }
+
+    /* ==========================================================================
+       3. PAGE HEADER BANNER
+       ========================================================================== */
+    .page-banner {
+      overflow: hidden; position: relative; color: white;
+      background:
+        radial-gradient(circle at 82% 22%, rgba(217,183,101,.18), transparent 24%),
+        radial-gradient(circle at 8% 100%, rgba(63,145,105,.28), transparent 30%),
+        linear-gradient(120deg, #073b2d 0%, #0b5a42 57%, #176b50 100%);
+      padding: 56px 0 68px;
+    }
+    .page-banner::before {
+      content: ""; position: absolute; inset: 0; opacity: .13; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='76' height='76' viewBox='0 0 76 76' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f5e8bd' stroke-width='1'%3E%3Cpath d='M38 4 48 14 62 14 62 28 72 38 62 48 62 62 48 62 38 72 28 62 14 62 14 48 4 38 14 28 14 14 28 14Z'/%3E%3Cpath d='M38 18 45 25 51 25 51 31 58 38 51 45 51 51 45 51 38 58 31 51 25 51 25 45 18 38 25 31 25 31 25Z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .banner-inner {
+      position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+      border: 1px solid rgba(245,232,189,.38); border-radius: 999px;
+      background: rgba(255,255,255,.07); color: var(--gold-light);
+      text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+    .page-banner h1 { margin: 0 0 14px; font-size: clamp(2.1rem, 4.5vw, 3.2rem); letter-spacing: -.04em; line-height: 1.15; }
+    .page-banner h1 span { color: var(--gold-light); }
+    .page-banner p { margin: 0 0 24px; max-width: 640px; color: #d7e9df; font-size: 1.05rem; }
+    .banner-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+    /* ==========================================================================
+       4. FILTER CONTROLS
+       ========================================================================== */
+    .filter-wrapper {
+      position: relative; margin-top: -28px; z-index: 5; margin-bottom: 40px;
+    }
+    .filter-bar {
+      display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap;
+      background: white; padding: 10px 14px; border-radius: 20px;
+      box-shadow: var(--shadow); border: 1px solid var(--line);
+      width: fit-content; margin: 0 auto;
+    }
+    .filter-btn {
+      border: none; background: transparent; padding: 9px 18px; border-radius: 12px;
+      color: var(--muted); font-weight: 700; font-size: .88rem; cursor: pointer;
+      transition: all .2s ease; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .filter-btn:hover { color: var(--green-800); background: var(--green-100); }
+    .filter-btn.active { background: var(--green-800); color: white; box-shadow: 0 4px 12px rgba(12,90,67,.2); }
+
+    /* ==========================================================================
+       5. GALLERY GRID & CARDS
+       ========================================================================== */
+    .gallery-section { padding-bottom: 80px; flex-grow: 1; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      transition: opacity .3s ease;
+    }
+    .gallery-card {
+      background: white; border: 1px solid var(--line); border-radius: 20px;
+      overflow: hidden; box-shadow: var(--shadow);
+      display: flex; flex-direction: column;
+      transition: transform .3s ease, box-shadow .3s ease, opacity .3s ease;
+      opacity: 1;
+    }
+    .gallery-card.hide { display: none; }
+    .gallery-card:hover {
+      transform: translateY(-6px); box-shadow: var(--shadow-hover);
+    }
+    .card-thumb {
+      position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #e8f3ed; cursor: pointer;
+    }
+    .card-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+    }
+    .gallery-card:hover .card-thumb img {
+      transform: scale(1.06);
+    }
+    .card-badge {
+      position: absolute; top: 14px; left: 14px; z-index: 2;
+      background: rgba(7, 59, 45, .85); color: var(--gold-light);
+      padding: 5px 12px; border-radius: 999px; font-size: .72rem; font-weight: 800;
+      letter-spacing: .03em; backdrop-filter: blur(6px); border: 1px solid rgba(245,232,189,.3);
+    }
+    .card-overlay {
+      position: absolute; inset: 0; background: rgba(7, 59, 45, .4);
+      display: flex; align-items: center; justify-content: center; color: white;
+      opacity: 0; transition: opacity .3s ease;
+    }
+    .gallery-card:hover .card-overlay { opacity: 1; }
+    .overlay-icon {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--gold-light); color: var(--green-950);
+      display: grid; place-items: center; box-shadow: 0 6px 16px rgba(0,0,0,.2);
+      transform: scale(.8); transition: transform .3s ease;
+    }
+    .gallery-card:hover .overlay-icon { transform: scale(1); }
+
+    .card-body {
+      padding: 22px; display: flex; flex-direction: column; flex-grow: 1;
+    }
+    .card-meta {
+      display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .8rem; margin-bottom: 8px;
+    }
+    .card-meta svg { width: 15px; height: 15px; color: var(--green-700); flex-shrink: 0; }
+    .card-title {
+      margin: 0 0 8px; font-size: 1.08rem; color: var(--green-950); letter-spacing: -.02em; font-weight: 800; line-height: 1.35;
+    }
+    .card-desc {
+      margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-footer {
+      margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .btn-preview {
+      color: var(--green-800); font-weight: 750; font-size: .84rem; display: inline-flex; align-items: center; gap: 6px;
+      cursor: pointer; background: none; border: none; padding: 0;
+    }
+    .btn-preview:hover { color: var(--green-950); }
+
+    /* Empty state */
+    .no-results {
+      grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: white;
+      border-radius: 20px; border: 1px solid var(--line); color: var(--muted);
+      display: none;
+    }
+    .no-results svg { width: 48px; height: 48px; color: var(--muted); margin-bottom: 12px; }
+
+    /* ==========================================================================
+       6. LIGHTBOX MODAL PREVIEW
+       ========================================================================== */
+    .lightbox-modal {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(5, 30, 23, .92); backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center; padding: 20px;
+      opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease;
+    }
+    .lightbox-modal.active { opacity: 1; visibility: visible; }
+    
+    .lightbox-content {
+      background: white; border-radius: 24px; max-width: 900px; width: 100%;
+      max-height: 90vh; overflow: hidden; display: grid; grid-template-columns: 1.2fr .8fr;
+      box-shadow: 0 25px 60px rgba(0,0,0,.4); position: relative;
+      transform: scale(.95); transition: transform .3s ease;
+    }
+    .lightbox-modal.active .lightbox-content { transform: scale(1); }
+
+    .lightbox-image-wrap {
+      background: #04241b; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; min-height: 320px;
+    }
+    .lightbox-image-wrap img {
+      width: 100%; height: 100%; object-fit: contain; max-height: 80vh;
+    }
+    
+    .lightbox-details {
+      padding: 32px; display: flex; flex-direction: column; overflow-y: auto;
+    }
+    .lightbox-close {
+      position: absolute; top: 16px; right: 16px; width: 36px; height: 36px;
+      border-radius: 50%; background: rgba(0,0,0,.1); border: none; cursor: pointer;
+      display: grid; place-items: center; color: var(--ink); transition: background .2s;
+      z-index: 10;
+    }
+    .lightbox-close:hover { background: var(--green-100); color: var(--green-950); }
+    .lightbox-tag {
+      align-self: flex-start; background: var(--green-100); color: var(--green-800);
+      font-size: .75rem; font-weight: 800; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;
+    }
+    .lightbox-title { margin: 0 0 12px; font-size: 1.4rem; color: var(--green-950); line-height: 1.3; }
+    .lightbox-date { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .85rem; margin-bottom: 18px; }
+    .lightbox-desc { color: #3d5b4e; font-size: .95rem; line-height: 1.6; margin: 0 0 24px; flex-grow: 1; }
+
+    .lightbox-nav {
+      display: flex; gap: 10px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line);
+    }
+    .nav-btn-modal {
+      flex: 1; padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--paper);
+      color: var(--ink); font-weight: 700; font-size: .82rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;
+      transition: background .2s;
+    }
+    .nav-btn-modal:hover { background: var(--green-100); color: var(--green-900); }
+
+    /* ==========================================================================
+       7. FOOTER
+       ========================================================================== */
+    footer { background: #052f24; color: #d8e8df; padding: 42px 0 24px; margin-top: auto; }
+    .footer-main { display: flex; justify-content: space-between; gap: 32px; align-items: flex-start; padding-bottom: 30px; }
+    .footer-brand { font-size: 1.05rem; font-weight: 800; color: white; display: flex; align-items: center; gap: 10px; }
+    .footer-description { max-width: 480px; color: #adc8ba; font-size: .88rem; margin: 10px 0 0; line-height: 1.6; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: .88rem; font-weight: 600; }
+    .footer-links a { color: #d8e8df; transition: color .2s; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .copyright { border-top: 1px solid rgba(255,255,255,.12); padding-top: 20px; color: #9fbdad; font-size: .8rem; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    /* ==========================================================================
+       8. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .lightbox-content { grid-template-columns: 1fr; max-height: 85vh; overflow-y: auto; }
+      .lightbox-image-wrap { max-height: 350px; }
+      .lightbox-close { background: white; box-shadow: 0 4px 10px rgba(0,0,0,.2); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { gap: 14px; }
+      .nav-links a:not(.btn) { display: none; }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .page-banner { padding: 42px 0 54px; }
+      .filter-bar { width: 100%; overflow-x: auto; justify-content: flex-start; padding: 8px 10px; border-radius: 16px; }
+      .filter-btn { white-space: nowrap; padding: 7px 14px; font-size: .82rem; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 32px, 1120px); }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .footer-main { flex-direction: column; }
+      .copyright { flex-direction: column; gap: 8px; text-align: center; }
+      .banner-actions { flex-direction: column; width: 100%; max-width: 300px; }
+      .banner-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><strong>DKM Al Mujtahid</strong> · SMAN 22 Bandung</span>
+      <span>Masjid Sekolah · Ibadah · Kepedulian · Transparansi · <a href="http://www.almujtahid22.my.id/" class="topbar-link">Beranda Utama</a></span>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header>
+    <nav class="container nav" aria-label="Navigasi Utama">
+      <a class="brand" href="http://www.almujtahid22.my.id/" aria-label="Beranda DKM Al Mujtahid">
+        <img class="brand-mark" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230c5a43'/%3E%3Cpath d='M50 18 L62 38 L84 38 L66 52 L73 74 L50 60 L27 74 L34 52 L16 38 L38 38 Z' fill='%23d9b765'/%3E%3Cpath d='M50 28 L58 42 L74 42 L61 52 L66 68 L50 58 L34 68 L39 52 L26 42 L42 42 Z' fill='%23ffffff'/%3E%3C/svg%3E" alt="Logo DKM Al Mujtahid">
+        <div>
+          <span class="brand-name">DKM AL MUJTAHID</span>
+          <span class="brand-sub">SMAN 22 BANDUNG</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="http://www.almujtahid22.my.id/">Beranda</a>
+        <a href="galeri.html" class="active">Galeri Foto</a>
+        <a href="www.almujtahid22.my.id#laporan">Laporan Keuangan</a>
+        <a href="http://www.almujtahid22.my.id/#program">Program</a>
+        <!-- Tombol kembali ke beranda -->
+        <a href="http://www.almujtahid22.my.id/" class="btn btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          Kembali ke Beranda
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BANNER HEADER -->
+  <section class="page-banner">
+    <div class="container banner-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Dokumentasi & Kegiatan
+      </div>
+      <h1>Galeri Foto <span>DKM Al Mujtahid</span></h1>
+      <p>Arsip foto dokumentasi berbagai agenda ibadah, kajian keislaman, peringatan hari besar Islam, serta aksi sosial jamaah di SMAN 22 Bandung.</p>
+      
+      <div class="banner-actions">
+        <a href="http://www.almujtahid22.my.id/" class="btn btn-gold">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          Kembali ke Beranda Utama
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN GALLERY SECTION -->
+  <main class="container gallery-section">
+    <!-- Filter Category Buttons -->
+    <div class="filter-wrapper">
+      <div class="filter-bar" role="tablist" aria-label="Filter Kategori Galeri">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+          Semua Kegiatan
+        </button>
+        <button class="filter-btn" data-filter="kajian" role="tab" aria-selected="false">
+          Kajian & Mentoring
+        </button>
+        <button class="filter-btn" data-filter="sosial" role="tab" aria-selected="false">
+          Sosial & Ziswaf
+        </button>
+        <button class="filter-btn" data-filter="hbi" role="tab" aria-selected="false">
+          Hari Besar Islam
+        </button>
+        <button class="filter-btn" data-filter="ekskul" role="tab" aria-selected="false">
+          Ekstrakurikuler
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+      
+      <!-- Item 1: HBI -->
+      <article class="gallery-card" data-category="hbi">
+        <div class="card-thumb" onclick="openLightbox(0)">
+          <span class="card-badge">Hari Besar Islam</span>
+          <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=800&q=80" alt="Peringatan Isra Miraj 1447 H">
+          <div class="card-overlay">
+            <div class="overlay-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            12 Februari 2026
+          </div>
+          <h3 class="card-title">Peringatan Isra Miraj 1447 H SMAN 22 Bandung</h3>
+          <p class="card-desc">Kegiatan ceramah umum, doa bersama, dan pembacaan ayat suci Al-Qur'an yang dihadiri oleh seluruh jajaran guru, staf, dan siswa SMAN 22 Bandung di Masjid Al Mujtahid.</p>
+          <div class="card-footer">
+            <button class="btn-preview" onclick="openLightbox(0)">
+              Lihat Foto Penuh 
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 2: Kajian -->
+      <article class="gallery-card" data-category="kajian">
+        <div class="card-thumb" onclick="openLightbox(1)">
+          <span class="card-badge">Kajian & Mentoring</span>
+          <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?auto=format&fit=crop&w=800&q=80" alt="Kajian Rutin Jumat">
+          <div class="card-overlay">
+            <div class="overlay-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            06 Februari 2026
+          </div>
+          <h3 class="card-title">Kajian Mentoring Remaja & Keputriaan</h3>
+          <p class="card-desc">Pembinaan akhlak, fikih ibadah harian, serta diskusi kepemudaan Islam rutin setiap pekan untuk membentuk generasi muda berkarakter Islami.</p>
+          <div class="card-footer">
+            <button class="btn-preview" onclick="openLightbox(1)">
+              Lihat Foto Penuh 
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 3: Sosial -->
+      <article class="gallery-card" data-category="sosial">
+        <div class="card-thumb" onclick="openLightbox(2)">
+          <span class="card-badge">Sosial & Ziswaf</span>
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Penyaluran Santunan Anak Yatim">
+          <div class="card-overlay">
+            <div class="overlay-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            25 Januari 2026
+          </div>
+          <h3 class="card-title">Penyaluran Santunan Yatim & Dhuafa</h3>
+          <p class="card-desc">Penyerahan paket sembako dan beasiswa pendidikan hasil pengelolaan zakat, infak, dan sedekah dari keluarga besar SMAN 22 Bandung kepada warga sekitar.</p>
+          <div class="card-footer">
+            <button class="btn-preview" onclick="openLightbox(2)">
+              Lihat Foto Penuh 
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 4: Ekskul -->
+      <article class="gallery-card" data-category="ekskul">
+        <div class="card-thumb" onclick="openLightbox(3)">
+          <span class="card-badge">Ekstrakurikuler</span>
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Latihan Hadroh">
+          <div class="card-overlay">
+            <div class="overlay-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            18 Januari 2026
+          </div>
+          <h3 class="card-title">Latihan Seni Hadroh & Seni Islam Rohis</h3>
+          <p class="card-desc">Latihan terpadu tim kesenian Islami Rohis SMAN 22 Bandung untuk persiapan pengisian acara syiar dan perlombaan antarsekolah di Kota Bandung.</p>
+          <div class="card-footer">
+            <button class="btn-preview" onclick="openLightbox(3)">
+              Lihat Foto Penuh 
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 5: Sosial -->
+      <article class="gallery-card" data-category="sosial">
+        <div class="card-thumb" onclick="openLightbox(4)">
+          <span class="card-badge">Sosial & Ziswaf</span>
+          <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=800&q=80" alt="Bakti Bersih Masjid">
+          <div class="card-overlay">
+            <div class="overlay-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            10 Januari 2026
+          </div>
+          <h3 class="card-title">Bakti Bersih Masjid & Lingkungan Sekolah</h3>
+          <p class="card-desc">Aksi pembersihan karpet, area wudhu, dan penataan perpustakaan Masjid Al Mujtahid secara gotong royong oleh pengurus DKM dan siswa pengurus kelas.</p>
+          <div class="card-footer">
+            <button class="btn-preview" onclick="openLightbox(4)">
+              Lihat Foto Penuh 
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 6: Kajian -->
+      <article class="gallery-card" data-category="kajian">
+        <div class="card-thumb" onclick="openLightbox(5)">
+          <span class="card-badge">Kajian & Mentoring</span>
+          <img src="https://images.unsplash.com/photo-1609599006353-e629aa5cfb71?auto=format&fit=crop&w=800&q=80" alt="Program Tahsin Quran">
+          <div class="card-overlay">
+            <div class="overlay-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            02 Januari 2026
+          </div>
+          <h3 class="card-title">Program Tahsin & Hifdzil Qur'an</h3>
+          <p class="card-desc">Bimbingan kelancaran membaca Al-Qur'an sesuai tajwid serta penyetoran hafalan juz 30 rutin sebelum jam pelajaran sekolah dimulai.</p>
+          <div class="card-footer">
+            <button class="btn-preview" onclick="openLightbox(5)">
+              Lihat Foto Penuh 
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Empty State Result -->
+    <div class="no-results" id="noResults">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      <h3 style="margin: 0 0 6px; color: var(--green-950);">Tidak Ada Foto untuk Kategori Ini</h3>
+      <p style="margin: 0;">Silakan pilih kategori lainnya untuk melihat koleksi dokumentasi kegiatan.</p>
+    </div>
+  </main>
+
+  <!-- LIGHTBOX MODAL PREVIEW -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Tampilan foto penuh">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Tutup foto">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="lightbox-image-wrap">
+        <img id="modalImg" src="" alt="Dokumentasi Kegiatan">
+      </div>
+
+      <div class="lightbox-details">
+        <span class="lightbox-tag" id="modalTag">Kategori</span>
+        <h2 class="lightbox-title" id="modalTitle">Judul Kegiatan</h2>
+        <div class="lightbox-date" id="modalDate">
+          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>Tanggal</span>
+        </div>
+        <p class="lightbox-desc" id="modalDesc">Deskripsi lengkap mengenai dokumentasi kegiatan DKM Al Mujtahid SMAN 22 Bandung.</p>
+
+        <div class="lightbox-nav">
+          <button class="nav-btn-modal" onclick="prevLightbox()">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+            Sebelumnya
+          </button>
+          <button class="nav-btn-modal" onclick="nextLightbox()">
+            Selanjutnya
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="kontak">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <div class="footer-brand">
+            <svg width="22" height="22" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#d9b765"/><path d="M50 18 L62 38 L84 38 L66 52 L73 74 L50 60 L27 74 L34 52 L16 38 L38 38 Z" fill="#073b2d"/></svg>
+            DKM AL MUJTAHID SMAN 22 BANDUNG
+          </div>
+          <p class="footer-description">
+            Wadah pembinaan kerohanian Islam sekolah yang berfokus pada ibadah, pendidikan karakter, kepedulian sosial, serta transparansi pengelolaan masjid.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="http://www.almujtahid22.my.id/">Beranda Utama</a>
+          <a href="http://www.galeri.html">Galeri Foto</a>
+          <a href="http://www.almujtahid22.my.id/#laporan">Laporan Keuangan</a>
+          <a href="http://www.almujtahid22.my.id/#program">Program DKM</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>&copy; 2026 Dikembangkan oleh tim TPMPS untuk DKM Al Mujtahid SMAN 22 Bandung. Seluruh hak cipta dilindungi.</span>
+        <span>Jl. Rajamantri Kulon 17 A, Kota Bandung, Jawa Barat</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FOR INTERACTIVITY -->
+  <script>
+    // Data list foto untuk Lightbox Preview
+    const galleryData = [
+      {
+        img: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80",
+        tag: "Hari Besar Islam",
+        title: "Peringatan Isra Miraj 1447 H SMAN 22 Bandung",
+        date: "12 Februari 2026",
+        desc: "Kegiatan ceramah umum, doa bersama, dan pembacaan ayat suci Al-Qur'an yang dihadiri oleh seluruh jajaran guru, staf, dan siswa SMAN 22 Bandung di Masjid Al Mujtahid."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1584286595398-a59f21d313f5?auto=format&fit=crop&w=1200&q=80",
+        tag: "Kajian & Mentoring",
+        title: "Kajian Mentoring Remaja & Keputriaan",
+        date: "06 Februari 2026",
+        desc: "Pembinaan akhlak, fikih ibadah harian, serta diskusi kepemudaan Islam rutin setiap pekan untuk membentuk generasi muda berkarakter Islami."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+        tag: "Sosial & Ziswaf",
+        title: "Penyaluran Santunan Yatim & Dhuafa",
+        date: "25 Januari 2026",
+        desc: "Penyerahan paket sembako dan beasiswa pendidikan hasil pengelolaan zakat, infak, dan sedekah dari keluarga besar SMAN 22 Bandung kepada warga sekitar."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
+        tag: "Ekstrakurikuler",
+        title: "Latihan Seni Hadroh & Seni Islam Rohis",
+        date: "18 Januari 2026",
+        desc: "Latihan terpadu tim kesenian Islami Rohis SMAN 22 Bandung untuk persiapan pengisian acara syiar dan perlombaan antarsekolah di Kota Bandung."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1200&q=80",
+        tag: "Sosial & Ziswaf",
+        title: "Bakti Bersih Masjid & Lingkungan Sekolah",
+        date: "10 Januari 2026",
+        desc: "Aksi pembersihan karpet, area wudhu, dan penataan perpustakaan Masjid Al Mujtahid secara gotong royong oleh pengurus DKM dan siswa pengurus kelas."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1609599006353-e629aa5cfb71?auto=format&fit=crop&w=1200&q=80",
+        tag: "Kajian & Mentoring",
+        title: "Program Tahsin & Hifdzil Qur'an",
+        date: "02 Januari 2026",
+        desc: "Bimbingan kelancaran membaca Al-Qur'an sesuai tajwid serta penyetoran hafalan juz 30 rutin sebelum jam pelajaran sekolah dimulai."
+      }
+    ];
+
+    let currentLightboxIndex = 0;
+
+    // Filter Kategori
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+    const noResults = document.getElementById('noResults');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle Active Button
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filterValue = btn.getAttribute('data-filter');
+        let visibleCount = 0;
+
+        galleryCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterValue === 'all' || category === filterValue) {
+            card.classList.remove('hide');
+            visibleCount++;
+          } else {
+            card.classList.add('hide');
+          }
+        });
+
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+      });
+    });
+
+    // Modal Lightbox Functions
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTag = document.getElementById('modalTag');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDate = document.getElementById('modalDate');
+    const modalDesc = document.getElementById('modalDesc');
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightboxContent();
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+      const data = galleryData[currentLightboxIndex];
+      modalImg.src = data.img;
+      modalTag.textContent = data.tag;
+      modalTitle.textContent = data.title;
+      modalDate.querySelector('span').textContent = data.date;
+      modalDesc.textContent = data.desc;
+    }
+
+    function prevLightbox() {
+      currentLightboxIndex = (currentLightboxIndex - 1 + galleryData.length) % galleryData.length;
+      updateLightboxContent();
+    }
+
+    function nextLightbox() {
+      currentLightboxIndex = (currentLightboxIndex + 1) % galleryData.length;
+      updateLightboxContent();
+    }
+
+    // Close on overlay click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation (Esc, Left, Right)
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+    });
+  </script>
+</body>
+</html>
