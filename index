@@ -645,21 +645,21 @@
     // Data list foto untuk Lightbox Preview
     const galleryData = [
       {
-        img: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80",
+        img: "Screenshot 2026-11-04 18.39.32.png",
         tag: "Hari Besar Islam",
         title: "Peringatan Isra Miraj 1447 H SMAN 22 Bandung",
         date: "12 Februari 2026",
         desc: "Kegiatan ceramah umum, doa bersama, dan pembacaan ayat suci Al-Qur'an yang dihadiri oleh seluruh jajaran guru, staf, dan siswa SMAN 22 Bandung di Masjid Al Mujtahid."
       },
       {
-        img: "https://images.unsplash.com/photo-1584286595398-a59f21d313f5?auto=format&fit=crop&w=1200&q=80",
+        img: "Screenshot 2026-11-04 18.39.32.png=80",
         tag: "Kajian & Mentoring",
         title: "Kajian Mentoring Remaja & Keputriaan",
         date: "06 Februari 2026",
         desc: "Pembinaan akhlak, fikih ibadah harian, serta diskusi kepemudaan Islam rutin setiap pekan untuk membentuk generasi muda berkarakter Islami."
       },
       {
-        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+        img: "Screenshot 2026-11-04 18.39.32.png-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
         tag: "Sosial & Ziswaf",
         title: "Penyaluran Santunan Yatim & Dhuafa",
         date: "25 Januari 2026",
